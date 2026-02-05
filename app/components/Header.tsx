@@ -12,18 +12,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        
-        {/* ✅ 로고 */}
-        <Link href="/" className="flex items-center gap-2">
-          <img
-            src="/globe.png"
-            alt="SKYRIDERS Logo"
-            width={28}
-            height={28}
-          />
-          <span className="text-lg font-semibold tracking-tight">
-            SKYRIDERS
-          </span>
+        <Link href="/" className="text-lg font-semibold tracking-tight">
+          SKYRIDERS
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
@@ -48,7 +38,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* 모바일 */}
+      {/* 모바일에선 메뉴 대신 간단 링크만 */}
       <div className="border-t md:hidden">
         <div className="mx-auto flex max-w-6xl items-center gap-4 overflow-x-auto px-4 py-2">
           {nav.map((item) => (
