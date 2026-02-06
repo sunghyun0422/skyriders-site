@@ -22,6 +22,9 @@ type Course = {
   flow: { day: string; title: string; items: string[] }[];
   cancellation: Section;
   notes: string[];
+
+  price: string;
+  priceDetails?: string[]; 
 };
 
 const COURSE: Record<string, Course> = {
@@ -91,6 +94,13 @@ const COURSE: Record<string, Course> = {
           "Valid license, personal insurance, own equipment, and flexibility for weather- and site-dependent operations (details finalized after internal review).",
       },
     ],
+    price: "USD 950",
+    priceDetails: [
+      "Cost-based pilot program pricing.",
+      "Includes lodging, local transport, meals, and on-site coordination.",
+      "Airfare and personal flying gear are not included.",
+    ],
+
     included: [
       "Local airport pickup and group transfers during the program",
       "All ground transportation related to the program schedule",
@@ -246,6 +256,13 @@ const COURSE: Record<string, Course> = {
         "Valid paragliding license, personal insurance, personal flying equipment, and flexibility for weather- and site-dependent operations (details finalized after internal review).",
     },
   ],
+  price: "USD 1550",
+  priceDetails: [
+    "Cost-based pilot program pricing.",
+    "Includes lodging, local transport, meals, and on-site coordination.",
+    "Airfare and personal flying gear are not included.",
+  ],
+
 
   included: [
     "Local airport pickup and group transfers during the program",
@@ -419,6 +436,13 @@ const COURSE: Record<string, Course> = {
         "Valid paragliding license, personal insurance, personal flying equipment, and flexibility for weather- and site-dependent operations (details finalized after internal review).",
     },
   ],
+  price: "USD 2450",
+  priceDetails: [
+    "Cost-based pilot program pricing.",
+    "Includes lodging, local transport, meals, and on-site coordination.",
+    "Airfare and personal flying gear are not included.",
+  ],
+
 
   included: [
     "Local airport pickup and group transfers during the program",
@@ -682,6 +706,23 @@ export default async function ProgramSlugPage({
         <div>
           <Card>
             <SectionTitle eyebrow="At a Glance" title="Key Facts" />
+            <div className="mt-5 rounded-3xl border border-black/10 bg-neutral-50 p-5">
+              <p className="text-xs font-semibold text-neutral-500">Price</p>
+              <p className="mt-2 text-2xl font-semibold">{course.price}</p>
+
+            {course.priceDetails?.length ? (
+              <ul className="mt-3 space-y-2 text-sm text-neutral-700">
+                {course.priceDetails.map((it) => (
+                  <li key={it} className="flex gap-2">
+                     <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-black/70" />
+                     <span>{it}</span>
+                 </li>
+                 ))}
+               </ul>
+             ) : null}
+            </div>
+
+
             <div className="mt-5 space-y-4">
               {course.keyFacts.map((k) => (
                 <div key={k.label} className="rounded-2xl border p-4">

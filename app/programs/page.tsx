@@ -34,6 +34,9 @@ type AlbatrossTier = {
   bullets: string[];
   featured?: boolean;
   image: string;
+
+  price: string;      
+  priceNote?: string;
 };
 
 const albatrossTiers: AlbatrossTier[] = [
@@ -50,6 +53,7 @@ const albatrossTiers: AlbatrossTier[] = [
       "Community exchange meetups",
     ],
     image: "/albatross-3.jpg",
+    price: "USD 950"
   },
   {
     slug: "5n6d",
@@ -65,6 +69,7 @@ const albatrossTiers: AlbatrossTier[] = [
     ],
     featured: true,
     image: "/albatross-5.jpg",
+    price: "USD 1550"
   },
   {
     slug: "8n9d",
@@ -79,6 +84,7 @@ const albatrossTiers: AlbatrossTier[] = [
       "More time for collaboration & learning",
     ],
     image: "/albatross-8.jpg",
+    price: "USD 2450"
   },
 ];
 
@@ -95,23 +101,6 @@ type Program = {
 };
 
 const otherPrograms: Program[] = [
-  {
-    title: "Danyang Machu Picchu Day",
-    subtitle: "A high-impact day for content + community",
-    duration: "1 Day",
-    location: "Danyang (Machu Picchu viewpoint area)",
-    forWho: "Anyone (spectators, friends, pilots). Tandem via partner operators.",
-    highlights: [
-      "Meet-up + briefing + photo/video moments",
-      "Mini challenge format (optional) for pilots",
-      "Local café/spot routing suggestion",
-      "Best for brand content production",
-    ],
-    ctaLabel: "Ask details",
-    ctaHref: "/contact",
-    note:
-      "Tandem flights and aviation operations are handled and paid directly to licensed partner operators.",
-  },
   {
     title: "SKYRIDERS XC Challenge",
     subtitle: "Seasonal self-logging challenge (non-FAI)",
@@ -217,6 +206,9 @@ export default function ProgramsPage() {
                 <div className="mt-4 flex flex-wrap gap-2">
                   <LightBadge>{t.duration}</LightBadge>
                   <LightBadge>{t.emphasis}</LightBadge>
+                  <LightBadge>
+                    <span className="font-semibold">{t.price}</span>
+                  </LightBadge>
                 </div>
 
                 <ul className="mt-5 space-y-2 text-sm text-neutral-700">
@@ -250,7 +242,7 @@ export default function ProgramsPage() {
           </div>
         </div>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
+        <div className="mt-6 grid gap-4 md:grid-cols-1">
           {otherPrograms.map((p) => (
             <article
               key={p.title}

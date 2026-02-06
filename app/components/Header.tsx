@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const nav = [
   { href: "/", label: "Home" },
+  { href: "/news/origin-of-skyriders", label: "Our Story" },
   { href: "/programs", label: "Programs" },
   { href: "/news", label: "News" },
   { href: "/resources", label: "Pilot Resources" },

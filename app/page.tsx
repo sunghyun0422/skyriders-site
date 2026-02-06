@@ -91,7 +91,7 @@ export default function HomePage() {
 
             <div className="mt-6">
               <Link
-                href="/news"
+                href="/news/origin-of-skyriders"
                 className="inline-flex items-center rounded-xl border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-50"
               >
                 Read More
