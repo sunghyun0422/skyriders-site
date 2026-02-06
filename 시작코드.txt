@@ -1,2 +1,8 @@
 시작코드
 npm run dev -- --webpack
+
+업로드 코드
+git status
+git add .
+git commit -m "Show prices on programs + remove other formats"
+git push
