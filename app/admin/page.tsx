@@ -87,25 +87,42 @@ export default function AdminPage() {
       </div>
 
       <div className="mt-6 flex flex-wrap gap-3">
-        <Link
-          href="/admin/posts/new"
-          className="rounded-xl bg-black px-4 py-2 text-sm font-medium text-white hover:opacity-90"
-        >
-          새 글 작성
-        </Link>
-        <Link
-          href="/admin/posts"
-          className="rounded-xl border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-50"
-        >
-          글 목록/관리
-        </Link>
-        <button
-          onClick={signOut}
-          className="rounded-xl border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-50"
-        >
-          로그아웃
-        </button>
-      </div>
+  <Link
+    href="/admin/posts/new"
+    className="rounded-xl bg-black px-4 py-2 text-sm font-medium text-white hover:opacity-90"
+  >
+    새 글 작성
+  </Link>
+
+  <Link
+    href="/admin/posts"
+    className="rounded-xl border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-50"
+  >
+    글 목록/관리
+  </Link>
+
+  <Link
+    href="/admin/content"
+    className="rounded-xl border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-50"
+  >
+    사이트 내용 편집
+  </Link>
+
+  <Link
+    href="/admin/users"
+    className="rounded-xl border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-50"
+  >
+    회원 목록
+  </Link>
+
+  <button
+    onClick={signOut}
+    className="rounded-xl border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-50"
+  >
+    로그아웃
+  </button>
+</div>
+
     </main>
   );
 }
